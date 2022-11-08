@@ -12,6 +12,8 @@
 		D020A415282D33F2002D9725 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D020A413282D33F2002D9725 /* Main.storyboard */; };
 		D020A417282D33F3002D9725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D020A416282D33F3002D9725 /* Assets.xcassets */; };
 		D020A41A282D33F3002D9725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D020A418282D33F3002D9725 /* LaunchScreen.storyboard */; };
+		D020A423282D4B4A002D9725 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020A422282D4B4A002D9725 /* NotificationManager.swift */; };
+		D020A426282D4D10002D9725 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020A425282D4D10002D9725 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		D020A419282D33F3002D9725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D020A41B282D33F3002D9725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D020A421282D343F002D9725 /* NotificationUpdateApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationUpdateApp.entitlements; sourceTree = "<group>"; };
+		D020A422282D4B4A002D9725 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		D020A425282D4D10002D9725 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +62,22 @@
 				D020A421282D343F002D9725 /* NotificationUpdateApp.entitlements */,
 				D020A40D282D33F2002D9725 /* AppDelegate.swift */,
 				D020A411282D33F2002D9725 /* ViewController.swift */,
+				D020A422282D4B4A002D9725 /* NotificationManager.swift */,
+				D020A424282D4D01002D9725 /* Extension */,
 				D020A413282D33F2002D9725 /* Main.storyboard */,
 				D020A416282D33F3002D9725 /* Assets.xcassets */,
 				D020A418282D33F3002D9725 /* LaunchScreen.storyboard */,
 				D020A41B282D33F3002D9725 /* Info.plist */,
 			);
 			path = NotificationUpdateApp;
+			sourceTree = "<group>";
+		};
+		D020A424282D4D01002D9725 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D020A425282D4D10002D9725 /* Data.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D020A423282D4B4A002D9725 /* NotificationManager.swift in Sources */,
 				D020A412282D33F2002D9725 /* ViewController.swift in Sources */,
 				D020A40E282D33F2002D9725 /* AppDelegate.swift in Sources */,
+				D020A426282D4D10002D9725 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
