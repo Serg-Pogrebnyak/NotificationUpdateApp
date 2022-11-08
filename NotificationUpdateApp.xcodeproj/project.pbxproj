@@ -17,10 +17,11 @@
 		D0EE75A3291A8781005D3094 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE75A2291A8781005D3094 /* WidgetKit.framework */; };
 		D0EE75A5291A8781005D3094 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE75A4291A8781005D3094 /* SwiftUI.framework */; };
 		D0EE75A8291A8781005D3094 /* NotificationLiveActivityBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE75A7291A8781005D3094 /* NotificationLiveActivityBundle.swift */; };
-		D0EE75AA291A8781005D3094 /* NotificationLiveActivityLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE75A9291A8781005D3094 /* NotificationLiveActivityLiveActivity.swift */; };
-		D0EE75AC291A8781005D3094 /* NotificationLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE75AB291A8781005D3094 /* NotificationLiveActivity.swift */; };
+		D0EE75AA291A8781005D3094 /* NotificationLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE75A9291A8781005D3094 /* NotificationLiveActivity.swift */; };
 		D0EE75AE291A8782005D3094 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0EE75AD291A8782005D3094 /* Assets.xcassets */; };
 		D0EE75B2291A8782005D3094 /* NotificationLiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D0EE75A0291A8781005D3094 /* NotificationLiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D0EE75B9291A8A7B005D3094 /* NotificationLiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE75B8291A8A7B005D3094 /* NotificationLiveActivityAttributes.swift */; };
+		D0EE75BA291A8A7B005D3094 /* NotificationLiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE75B8291A8A7B005D3094 /* NotificationLiveActivityAttributes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,10 +63,10 @@
 		D0EE75A2291A8781005D3094 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		D0EE75A4291A8781005D3094 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		D0EE75A7291A8781005D3094 /* NotificationLiveActivityBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationLiveActivityBundle.swift; sourceTree = "<group>"; };
-		D0EE75A9291A8781005D3094 /* NotificationLiveActivityLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationLiveActivityLiveActivity.swift; sourceTree = "<group>"; };
-		D0EE75AB291A8781005D3094 /* NotificationLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationLiveActivity.swift; sourceTree = "<group>"; };
+		D0EE75A9291A8781005D3094 /* NotificationLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationLiveActivity.swift; sourceTree = "<group>"; };
 		D0EE75AD291A8782005D3094 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0EE75AF291A8782005D3094 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0EE75B8291A8A7B005D3094 /* NotificationLiveActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationLiveActivityAttributes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				D0EE75A7291A8781005D3094 /* NotificationLiveActivityBundle.swift */,
-				D0EE75A9291A8781005D3094 /* NotificationLiveActivityLiveActivity.swift */,
-				D0EE75AB291A8781005D3094 /* NotificationLiveActivity.swift */,
+				D0EE75B8291A8A7B005D3094 /* NotificationLiveActivityAttributes.swift */,
+				D0EE75A9291A8781005D3094 /* NotificationLiveActivity.swift */,
 				D0EE75AD291A8782005D3094 /* Assets.xcassets */,
 				D0EE75AF291A8782005D3094 /* Info.plist */,
 			);
@@ -258,6 +259,7 @@
 				D020A412282D33F2002D9725 /* ViewController.swift in Sources */,
 				D020A40E282D33F2002D9725 /* AppDelegate.swift in Sources */,
 				D020A426282D4D10002D9725 /* Data.swift in Sources */,
+				D0EE75B9291A8A7B005D3094 /* NotificationLiveActivityAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,8 +267,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0EE75AA291A8781005D3094 /* NotificationLiveActivityLiveActivity.swift in Sources */,
-				D0EE75AC291A8781005D3094 /* NotificationLiveActivity.swift in Sources */,
+				D0EE75AA291A8781005D3094 /* NotificationLiveActivity.swift in Sources */,
+				D0EE75BA291A8A7B005D3094 /* NotificationLiveActivityAttributes.swift in Sources */,
 				D0EE75A8291A8781005D3094 /* NotificationLiveActivityBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,5 @@ import SwiftUI
 struct NotificationLiveActivityBundle: WidgetBundle {
     var body: some Widget {
         NotificationLiveActivity()
-        NotificationLiveActivityLiveActivity()
     }
 }
