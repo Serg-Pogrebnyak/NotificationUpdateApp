@@ -39,7 +39,7 @@ screen /dev/cu.usbserial-A10LTYXX 115200
 - Build and run an application (live activity should start automatically)
 - Connect to the BLE device which contain ANCS and prepared on the previous step
 - After successfully connecting application should open ```Token details``` screen
-- Open the terminal and segue in sendUpdateToLiveActivity.sh and sendPushWithCollapseId.sh folder
+- Open the terminal and segue folder with bash files (sendUpdateToLiveActivity.sh and sendPushWithCollapseId.sh)
 - Tap on a label with the bash command to update live activity or send a push notification
 - Paste in terminal
 - Tap enter
