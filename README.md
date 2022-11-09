@@ -5,6 +5,7 @@
 ## Environment 🔨
 - iOS 16.1
 - Xcode 14.1
+- BLE device (with firmware that print logs in real-time in the console)
 
 ## Setup ⚙️
 Preparing project in general:
@@ -25,15 +26,23 @@ Preparing stuff to send push notifications:
 - Change ```AUTH_KEY_ID``` to the Auth Key ID from step 3
 - Change ```TOPIC``` to the bundle ID of your app (MAKE SURE to keep ```.push-type.liveactivity``` at the end in sendUpdateToLiveActivity.sh file!)
 
+Preparing BLE device:
+- connect BLE peripheral to your PC (for macOS you can use ```screen``` command, [see for more details](https://pbxbook.com/other/mac-tty.html))
+Example: 
+```
+screen /dev/cu.usbserial-A10LTYXX 115200
+```
+- make sure that you see logs from your BLE device in the console
+
 ## Testing 👨‍💻
 - Build and run an application (live activity should start automatically)
-- Connect to any BLE devices which contain ANCS
+- Connect to the BLE device which contain ANCS and prepared on the previous step
 - After successfully connecting application should open ```Token details``` screen
 - Open the terminal and segue in sendUpdateToLiveActivity.sh and sendPushWithCollapseId.sh folder
 - Tap on a label with the bash command to update live activity or send a push notification
 - Paste in terminal
 - Tap enter
-- Make sure that you received live activity updates or push notification
+- Make sure that you received live activity updates or push notifications on your iOS device
 
 ## Troubleshooting 🐛
 - If the live activity didn't launch automatically -> check in the application settings does it allowed to show, or relaunch the application
