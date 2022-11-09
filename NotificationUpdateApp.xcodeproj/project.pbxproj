@@ -24,6 +24,7 @@
 		D0EE75BA291A8A7B005D3094 /* NotificationLiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE75B8291A8A7B005D3094 /* NotificationLiveActivityAttributes.swift */; };
 		D0EE75BC291BC17F005D3094 /* BLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE75BB291BC17F005D3094 /* BLE.swift */; };
 		D0EE75BE291BC1A5005D3094 /* CBCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE75BD291BC1A5005D3094 /* CBCentralManager.swift */; };
+		D0EE75C0291BC662005D3094 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE75BF291BC662005D3094 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		D0EE75B8291A8A7B005D3094 /* NotificationLiveActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationLiveActivityAttributes.swift; sourceTree = "<group>"; };
 		D0EE75BB291BC17F005D3094 /* BLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLE.swift; sourceTree = "<group>"; };
 		D0EE75BD291BC1A5005D3094 /* CBCentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCentralManager.swift; sourceTree = "<group>"; };
+		D0EE75BF291BC662005D3094 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				D020A425282D4D10002D9725 /* Data.swift */,
 				D0EE75BD291BC1A5005D3094 /* CBCentralManager.swift */,
+				D0EE75BF291BC662005D3094 /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				D020A40E282D33F2002D9725 /* AppDelegate.swift in Sources */,
 				D020A426282D4D10002D9725 /* Data.swift in Sources */,
 				D0EE75BE291BC1A5005D3094 /* CBCentralManager.swift in Sources */,
+				D0EE75C0291BC662005D3094 /* UIViewController.swift in Sources */,
 				D0EE75B9291A8A7B005D3094 /* NotificationLiveActivityAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

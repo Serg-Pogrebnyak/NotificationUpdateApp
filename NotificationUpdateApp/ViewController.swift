@@ -28,7 +28,7 @@ final class ViewController: UIViewController {
     }
 
     @IBAction private func didTapSearchButton(_ sender: Any) {
-        guard ble.bluetoothState.canStartSearch else { return } //TODO: show error here
+        guard ble.bluetoothState.canStartSearch else { return showBluetoothError() }
         guard ble.startSearchDevices() else { return }
         peripheralSet.removeAll()
     }
