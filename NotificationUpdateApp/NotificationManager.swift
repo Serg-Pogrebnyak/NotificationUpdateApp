@@ -7,10 +7,17 @@
 
 import UIKit
 
+protocol NotificationManagerDelegate: AnyObject {
+    func tokenDidChange(_ token: String)
+}
+
 final class NotificationManager: NSObject {
+    
+    weak var delegate: NotificationManagerDelegate?
     
     private let notificationCenter = UNUserNotificationCenter.current()
     private let application: UIApplication
+    private(set) var token: String?
     
     init(application: UIApplication = .shared) {
         self.application = application
@@ -29,13 +36,13 @@ final class NotificationManager: NSObject {
     }
     
     func registerToken(deviceToken: Data) {
-        print("\(self).token is: ", deviceToken.hex)
+        token = deviceToken.hex
+        delegate?.tokenDidChange(deviceToken.hex)
     }
     
     func handle(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], openAppFromPush: Bool = false, completion: @escaping (UIBackgroundFetchResult) -> Void = {_ in }) {
         print("\(self).didReceiveRemoteNotification: \(userInfo)")
     }
-    
 }
 
 extension NotificationManager: UNUserNotificationCenterDelegate {

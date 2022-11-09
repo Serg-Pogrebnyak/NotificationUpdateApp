@@ -13,6 +13,8 @@ final class DetailsVC: UIViewController {
     @IBOutlet private weak var activityTokenLabel: UILabel!
     @IBOutlet private weak var liveActivityTerminalCommandLabel: UILabel!
     
+    var notificationManager: NotificationManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +24,7 @@ final class DetailsVC: UIViewController {
         } else {
             liveActivityStackView.isHidden = true
         }
+        notificationManager?.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,5 +60,11 @@ extension DetailsVC: ActivityManagerDelegate {
         if #available(iOS 16.1, *) {
             setupActivityDataToDisplay()
         }
+    }
+}
+
+extension DetailsVC: NotificationManagerDelegate {
+    func tokenDidChange(_ token: String) {
+        
     }
 }

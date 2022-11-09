@@ -13,6 +13,8 @@ final class BLEListVC: UIViewController {
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var devicesTableViewList: UITableView!
     
+    var notificationManager: NotificationManager?
+    
     private var peripheralSet: Set<CBPeripheral> = .init() { didSet { devicesTableViewList.reloadData() } }
     private var peripheralArray: [CBPeripheral] { Array(peripheralSet).sorted { ($0.name ?? .init()) > ($1.name ?? .init()) } }
     
@@ -54,6 +56,7 @@ extension BLEListVC: BLEDelegate {
     
     func didConnectToDevice() {
         guard let detailsVC: DetailsVC = storyboard?.viewController() else { return }
+        detailsVC.notificationManager = notificationManager
         navigationController?.pushViewController(detailsVC, animated: true)
     }
     
