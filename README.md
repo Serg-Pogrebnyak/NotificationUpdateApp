@@ -19,24 +19,22 @@ Preparing stuff to send push notifications:
 - Press [Register] and download the .p8 file while saving the Auth Key ID somewhere safe
 - Convert .p8 key to .pem key using ```openssl pkcs8 -nocrypt -in AuthKey_XXXXXXXXXX.p8 -out AuthKey_XXXXXXXXXX.pem```
 - Move *.pem file in folder with *.sh files
-- Open updateDelivery.sh and sendPushWithCollapseId.sh in some editor
+- Open sendUpdateToLiveActivity.sh and sendPushWithCollapseId.sh in some editor
 - Change ```TEAM_ID``` to your Apple Developer Team ID
 - Change ```TOKEN_KEY_FILE_NAME```to the .pem file generated in step 4
 - Change ```AUTH_KEY_ID``` to the Auth Key ID from step 3
-- Change ```TOPIC``` to the bundle ID of your app (MAKE SURE to keep ```.push-type.liveactivity``` at the end!)
+- Change ```TOPIC``` to the bundle ID of your app (MAKE SURE to keep ```.push-type.liveactivity``` at the end in sendUpdateToLiveActivity.sh file!)
 
 ## Testing 👨‍💻
 - Build and run an application (live activity should start automatically)
-- Connect to any BLE devices which contain ANCS stuff
-- Open the terminal and segue in *.sh folder
-//TODO: will continue from here
-- Run ```./*.sh '{LIVE_ACTIVITY_TOKEN}' '{VALUE}'``` and use live activity bash file (updateDelivery) or push notification with collapse id (sendPushWithCollapseId) accordingly
-
-Example: 
-```
-./sendPushWithCollapseId.sh ABCDEFGH 1
-```
+- Connect to any BLE devices which contain ANCS
+- After successfully connecting application should open ```Token details``` screen
+- Open the terminal and segue in sendUpdateToLiveActivity.sh and sendPushWithCollapseId.sh folder
+- Tap on a label with the bash command to update live activity or send a push notification
+- Paste in terminal
+- Tap enter
+- Make sure that you received live activity updates or push notification
 
 ## Troubleshooting 🐛
-- If the live activity didn't launch automatically -> check in the application settings does it allowed to show
+- If the live activity didn't launch automatically -> check in the application settings does it allowed to show, or relaunch the application
 - If you didn't receive push notifications -> check do you launch an application in debug configuration, otherwise change in *.sh files ```APNS_HOST_NAME``` on release.
