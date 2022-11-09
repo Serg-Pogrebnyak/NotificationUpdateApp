@@ -12,19 +12,14 @@ final class DetailsVC: UIViewController {
     @IBOutlet private weak var liveActivityStackView: UIStackView!
     @IBOutlet private weak var activityTokenLabel: UILabel!
     @IBOutlet private weak var liveActivityTerminalCommandLabel: UILabel!
+    @IBOutlet private weak var pushNotificationTokenLabel: UILabel!
     
     var notificationManager: NotificationManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 16.1, *) {
-            setupActivityDataToDisplay()
-            ActivityManager.shared.delegate = self
-        } else {
-            liveActivityStackView.isHidden = true
-        }
-        notificationManager?.delegate = self
+        setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +38,25 @@ final class DetailsVC: UIViewController {
         UINotificationFeedbackGenerator().notificationOccurred(.success)
     }
     
+    @IBAction private func didTapPushNotificationToken(_ sender: Any) {
+        UIPasteboard.general.string = pushNotificationTokenLabel.text
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
+    }
+    
+    private func setup() {
+        // Live activity stuff
+        if #available(iOS 16.1, *) {
+            setupActivityDataToDisplay()
+            ActivityManager.shared.delegate = self
+        } else {
+            liveActivityStackView.isHidden = true
+        }
+        
+        // Push notification stuff
+        notificationManager?.delegate = self
+        displayPushNotificationToken()
+    }
+    
     @available(iOS 16.1, *)
     private func setupActivityDataToDisplay() {
         if let activityToken = ActivityManager.shared.activityToken {
@@ -52,6 +66,10 @@ final class DetailsVC: UIViewController {
             activityTokenLabel.text = "No activity token"
             liveActivityTerminalCommandLabel.text = "No activity token"
         }
+    }
+    
+    private func displayPushNotificationToken() {
+        pushNotificationTokenLabel.text = notificationManager?.token ?? "No push notification token"
     }
 }
 
@@ -65,6 +83,6 @@ extension DetailsVC: ActivityManagerDelegate {
 
 extension DetailsVC: NotificationManagerDelegate {
     func tokenDidChange(_ token: String) {
-        
+        displayPushNotificationToken()
     }
 }
