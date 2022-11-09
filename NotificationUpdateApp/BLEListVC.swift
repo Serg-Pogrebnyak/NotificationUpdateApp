@@ -14,7 +14,7 @@ final class BLEListVC: UIViewController {
     @IBOutlet private weak var devicesTableViewList: UITableView!
     
     private var peripheralSet: Set<CBPeripheral> = .init() { didSet { devicesTableViewList.reloadData() } }
-    private var peripheralArray: [CBPeripheral] { Array(peripheralSet) }
+    private var peripheralArray: [CBPeripheral] { Array(peripheralSet).sorted { ($0.name ?? .init()) > ($1.name ?? .init()) } }
     
     private let ble = BLE()
     
