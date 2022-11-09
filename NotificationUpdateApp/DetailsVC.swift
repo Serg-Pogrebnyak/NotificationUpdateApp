@@ -13,6 +13,7 @@ final class DetailsVC: UIViewController {
     @IBOutlet private weak var activityTokenLabel: UILabel!
     @IBOutlet private weak var liveActivityTerminalCommandLabel: UILabel!
     @IBOutlet private weak var pushNotificationTokenLabel: UILabel!
+    @IBOutlet private weak var notificationTokenTerminalCommandLabel: UILabel!
     
     var notificationManager: NotificationManager?
     
@@ -43,6 +44,11 @@ final class DetailsVC: UIViewController {
         UINotificationFeedbackGenerator().notificationOccurred(.success)
     }
     
+    @IBAction private func didTapCopyPushNotificationCommand(_ sender: Any) {
+        UIPasteboard.general.string = notificationTokenTerminalCommandLabel.text
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
+    }
+    
     private func setup() {
         // Live activity stuff
         if #available(iOS 16.1, *) {
@@ -69,7 +75,13 @@ final class DetailsVC: UIViewController {
     }
     
     private func displayPushNotificationToken() {
-        pushNotificationTokenLabel.text = notificationManager?.token ?? "No push notification token"
+        if let pushToken = notificationManager?.token {
+            pushNotificationTokenLabel.text = pushToken
+            notificationTokenTerminalCommandLabel.text = "sh ./sendPushWithCollapseId.sh \(pushToken) \(Int.random(in: 0..<100))"
+        } else {
+            pushNotificationTokenLabel.text = "No push notification token"
+            notificationTokenTerminalCommandLabel.text = "No push notification token"
+        }
     }
 }
 

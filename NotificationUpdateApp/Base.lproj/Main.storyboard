@@ -92,11 +92,11 @@
                                 <rect key="frame" x="20" y="48" width="374" height="814"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Lx-6a-XgX">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="280.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="244.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ws0-XL-wIy" userLabel="Live Activity Stack View">
-                                        <rect key="frame" x="0.0" y="310.5" width="374" height="117.5"/>
+                                        <rect key="frame" x="0.0" y="274.5" width="374" height="117.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live activity token (tap to copy):" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SRq-Wf-UbW">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -131,7 +131,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="erW-7M-cuK">
-                                        <rect key="frame" x="0.0" y="458" width="374" height="46"/>
+                                        <rect key="frame" x="0.0" y="422" width="374" height="117.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push notification token (tap to copy):" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wkV-ss-2ir">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -148,10 +148,25 @@
                                                     <outletCollection property="gestureRecognizers" destination="X38-uS-fML" appends="YES" id="4df-To-Fay"/>
                                                 </connections>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push notification token ready to run via terminal (tap to copy):" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fbY-Z7-Qiz">
+                                                <rect key="frame" x="0.0" y="51" width="374" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="75O-wt-a3f">
+                                                <rect key="frame" x="0.0" y="97" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="OMM-7w-RN1" appends="YES" id="lQL-KZ-NKa"/>
+                                                </connections>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37c-74-GRc">
-                                        <rect key="frame" x="0.0" y="534" width="374" height="280"/>
+                                        <rect key="frame" x="0.0" y="569.5" width="374" height="244.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -174,6 +189,7 @@
                         <outlet property="activityTokenLabel" destination="9OD-8B-V0W" id="orv-9h-Ujc"/>
                         <outlet property="liveActivityStackView" destination="Ws0-XL-wIy" id="aVI-5m-rAK"/>
                         <outlet property="liveActivityTerminalCommandLabel" destination="FL3-Bp-9wL" id="i6H-Q5-U6h"/>
+                        <outlet property="notificationTokenTerminalCommandLabel" destination="75O-wt-a3f" id="MTb-FD-ZPB"/>
                         <outlet property="pushNotificationTokenLabel" destination="I7e-eq-Sxg" id="ZEZ-iJ-Xy8"/>
                     </connections>
                 </viewController>
@@ -191,6 +207,11 @@
                 <tapGestureRecognizer id="X38-uS-fML">
                     <connections>
                         <action selector="didTapPushNotificationToken:" destination="Lok-T9-b13" id="pot-gf-E86"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="OMM-7w-RN1">
+                    <connections>
+                        <action selector="didTapCopyPushNotificationCommand:" destination="Lok-T9-b13" id="4Qq-Jp-7bN"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
