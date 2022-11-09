@@ -67,7 +67,7 @@ final class DetailsVC: UIViewController {
     private func setupActivityDataToDisplay() {
         if let activityToken = ActivityManager.shared.activityToken {
             activityTokenLabel.text = activityToken
-            liveActivityTerminalCommandLabel.text = "./updateDelivery.sh \(activityToken) \(Int.random(in: 0..<100))"
+            liveActivityTerminalCommandLabel.text = "./sendUpdateToLiveActivity.sh \(activityToken) \(Int.random(in: 0..<100))"
         } else {
             activityTokenLabel.text = "No activity token"
             liveActivityTerminalCommandLabel.text = "No activity token"
