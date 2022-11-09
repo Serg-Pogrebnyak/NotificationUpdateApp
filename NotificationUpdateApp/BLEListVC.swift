@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import ActivityKit
 import CoreBluetooth
 
 final class BLEListVC: UIViewController {
@@ -23,7 +22,7 @@ final class BLEListVC: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         if #available(iOS 16.1, *) {
-            startLiveActivity()
+            ActivityManager.shared.startActivity()
         }
         ble.delegate = self
     }
@@ -32,25 +31,6 @@ final class BLEListVC: UIViewController {
         guard ble.bluetoothState.canStartSearch else { return showBluetoothError() }
         guard ble.startSearchDevices() else { return }
         peripheralSet.removeAll()
-    }
-    
-    @available(iOS 16.1, *)
-    private func startLiveActivity() {
-        let staticContent = NotificationLiveActivityAttributes(name: "Some name will be here")
-        
-        do {
-            let deliveryActivity = try Activity<NotificationLiveActivityAttributes>.request(
-                attributes: staticContent,
-                contentState: .init(value: 0),
-                pushType: .token)
-            Task {
-                for await activityPushToken in deliveryActivity.pushTokenUpdates {
-                    print("live activity token: \(activityPushToken.hex)")
-                }
-            }
-        } catch (let error) {
-            print("Error requesting live activity \(error.localizedDescription)")
-        }
     }
 }
 

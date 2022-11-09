@@ -25,6 +25,7 @@
 		D0EE75BC291BC17F005D3094 /* BLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE75BB291BC17F005D3094 /* BLE.swift */; };
 		D0EE75BE291BC1A5005D3094 /* CBCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE75BD291BC1A5005D3094 /* CBCentralManager.swift */; };
 		D0EE75C0291BC662005D3094 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE75BF291BC662005D3094 /* UIViewController.swift */; };
+		D0EE75C2291BCEA0005D3094 /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE75C1291BCEA0005D3094 /* ActivityManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		D0EE75BB291BC17F005D3094 /* BLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLE.swift; sourceTree = "<group>"; };
 		D0EE75BD291BC1A5005D3094 /* CBCentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCentralManager.swift; sourceTree = "<group>"; };
 		D0EE75BF291BC662005D3094 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		D0EE75C1291BCEA0005D3094 /* ActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				D020A411282D33F2002D9725 /* BLEListVC.swift */,
 				D020A422282D4B4A002D9725 /* NotificationManager.swift */,
 				D0EE75BB291BC17F005D3094 /* BLE.swift */,
+				D0EE75C1291BCEA0005D3094 /* ActivityManager.swift */,
 				D020A424282D4D01002D9725 /* Extension */,
 				D020A413282D33F2002D9725 /* Main.storyboard */,
 				D020A416282D33F3002D9725 /* Assets.xcassets */,
@@ -266,6 +269,7 @@
 			files = (
 				D020A423282D4B4A002D9725 /* NotificationManager.swift in Sources */,
 				D0EE75BC291BC17F005D3094 /* BLE.swift in Sources */,
+				D0EE75C2291BCEA0005D3094 /* ActivityManager.swift in Sources */,
 				D020A412282D33F2002D9725 /* BLEListVC.swift in Sources */,
 				D020A40E282D33F2002D9725 /* AppDelegate.swift in Sources */,
 				D020A426282D4D10002D9725 /* Data.swift in Sources */,
