@@ -20,11 +20,15 @@ final class BLEListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
         if #available(iOS 16.1, *) {
             ActivityManager.shared.startActivity()
         }
         ble.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
 
     @IBAction private func didTapSearchButton(_ sender: Any) {

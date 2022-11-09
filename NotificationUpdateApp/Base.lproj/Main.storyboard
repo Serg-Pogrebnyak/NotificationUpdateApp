@@ -88,32 +88,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="X03-MP-30N">
-                                <rect key="frame" x="20" y="438" width="374" height="20.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="X03-MP-30N">
+                                <rect key="frame" x="20" y="48" width="374" height="814"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OD-8B-V0W">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Lx-6a-XgX">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="318.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ws0-XL-wIy" userLabel="Live Activity Stack View">
+                                        <rect key="frame" x="0.0" y="348.5" width="374" height="117.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live activity token (tap to copy):" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SRq-Wf-UbW">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9OD-8B-V0W">
+                                                <rect key="frame" x="0.0" y="25.5" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="MMr-mQ-Fxf" appends="YES" id="5Px-a2-PLi"/>
+                                                </connections>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live activity command ready to run via terminal (tap to copy):" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZgN-T7-VA4">
+                                                <rect key="frame" x="0.0" y="51" width="374" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FL3-Bp-9wL">
+                                                <rect key="frame" x="0.0" y="97" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="6gm-SW-abe" appends="YES" id="F2J-Wi-SCG"/>
+                                                </connections>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37c-74-GRc">
+                                        <rect key="frame" x="0.0" y="496" width="374" height="318"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="37c-74-GRc" firstAttribute="height" secondItem="0Lx-6a-XgX" secondAttribute="height" id="Xrz-6X-xMC"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="InP-6Y-rWR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="InP-6Y-rWR" firstAttribute="bottom" secondItem="X03-MP-30N" secondAttribute="bottom" id="0fY-tj-Dsj"/>
                             <constraint firstItem="InP-6Y-rWR" firstAttribute="trailing" secondItem="X03-MP-30N" secondAttribute="trailing" constant="20" id="2DY-Es-y9n"/>
+                            <constraint firstItem="X03-MP-30N" firstAttribute="top" secondItem="InP-6Y-rWR" secondAttribute="top" id="BAM-Pa-yCz"/>
                             <constraint firstItem="X03-MP-30N" firstAttribute="leading" secondItem="InP-6Y-rWR" secondAttribute="leading" constant="20" id="bLb-8W-6ve"/>
-                            <constraint firstItem="X03-MP-30N" firstAttribute="centerY" secondItem="4kB-Mu-UkB" secondAttribute="centerY" id="kFW-Zh-qKL"/>
-                            <constraint firstItem="X03-MP-30N" firstAttribute="centerX" secondItem="4kB-Mu-UkB" secondAttribute="centerX" id="nFQ-n3-esB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityTokenLabel" destination="9OD-8B-V0W" id="orv-9h-Ujc"/>
+                        <outlet property="liveActivityStackView" destination="Ws0-XL-wIy" id="aVI-5m-rAK"/>
+                        <outlet property="liveActivityTerminalCommandLabel" destination="FL3-Bp-9wL" id="i6H-Q5-U6h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iR1-hI-r1V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="MMr-mQ-Fxf">
+                    <connections>
+                        <action selector="didTapCopyLiveActivityToken:" destination="Lok-T9-b13" id="7sn-xE-mtv"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="6gm-SW-abe">
+                    <connections>
+                        <action selector="didTapCopyLiveActivityCommand:" destination="Lok-T9-b13" id="C41-bh-Ume"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1064" y="775"/>
         </scene>
