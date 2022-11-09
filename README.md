@@ -8,7 +8,7 @@
 - BLE device (with firmware that print logs in real-time in the console)
 
 ## Setup ⚙️
-Preparing project in general:
+Preparing application:
 - Clone or download the project
 - Change the ```app-bundle-id``` on your (for application and for live activity widget)
 - Add provision profile
@@ -28,6 +28,7 @@ Preparing stuff to send push notifications:
 
 Preparing BLE device:
 - connect BLE peripheral to your PC (for macOS you can use ```screen``` command, [see for more details](https://pbxbook.com/other/mac-tty.html))
+
 Example: 
 ```
 screen /dev/cu.usbserial-A10LTYXX 115200
