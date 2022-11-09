@@ -17,24 +17,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yQJ-b7-ACd">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yQJ-b7-ACd">
                                 <rect key="frame" x="0.0" y="48" width="414" height="848"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JsN-Ki-QIN">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLr-2D-VSx">
+                                                <rect key="frame" x="0.0" y="0.0" width="15" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="15" id="SvA-sq-b6P"/>
+                                                </constraints>
+                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFJ-LJ-N8q">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="34.5"/>
+                                                <rect key="frame" x="35" y="0.0" width="344" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="S3u-nC-Wlj"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="Search"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Search"/>
                                                 <connections>
                                                     <action selector="didTapSearchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="akG-XF-Juc"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWG-fK-VN7">
+                                                <rect key="frame" x="399" y="0.0" width="15" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="oWG-fK-VN7" firstAttribute="width" secondItem="wLr-2D-VSx" secondAttribute="width" id="2zt-aU-2pr"/>
+                                        </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YLK-0Q-TxM">
-                                        <rect key="frame" x="0.0" y="34.5" width="414" height="813.5"/>
+                                        <rect key="frame" x="0.0" y="54" width="414" height="794"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
                                             <outlet property="dataSource" destination="BYZ-38-t0r" id="pgF-Bm-xmg"/>
@@ -45,7 +62,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="yQJ-b7-ACd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HDt-jk-eQK"/>
                             <constraint firstAttribute="bottom" secondItem="yQJ-b7-ACd" secondAttribute="bottom" id="JRq-FJ-Jd1"/>
@@ -67,8 +84,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
