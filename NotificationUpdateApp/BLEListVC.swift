@@ -35,6 +35,14 @@ final class BLEListVC: UIViewController {
         guard ble.bluetoothState.canStartSearch else { return showBluetoothError() }
         guard ble.startSearchDevices() else { return }
         peripheralSet.removeAll()
+        updateDeviceTableView(enabling: true)
+    }
+    
+    private func updateDeviceTableView(enabling: Bool) {
+        devicesTableViewList.isUserInteractionEnabled = enabling
+        devicesTableViewList.visibleCells.forEach {
+            $0.contentView.alpha = enabling ? 1 : 0.6
+        }
     }
 }
 
@@ -55,6 +63,7 @@ extension BLEListVC: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         guard peripheralArray.indices.contains(indexPath.row) else { return }
         ble.connectTo(device: peripheralArray[indexPath.row])
+        updateDeviceTableView(enabling: false)
     }
 }
 
