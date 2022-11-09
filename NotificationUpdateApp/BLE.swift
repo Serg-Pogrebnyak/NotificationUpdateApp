@@ -11,6 +11,7 @@ import CoreBluetooth
 protocol BLEDelegate: AnyObject {
     func notifyThatFoundNewDeviceInScanningTime(device: CBPeripheral)
     func didConnectToDevice()
+    func didFailToConnectToDevice()
 }
 
 final class BLE: NSObject {
@@ -68,5 +69,9 @@ extension BLE: CBPeripheralDelegate {
     //didConnect
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         delegate?.didConnectToDevice()
+    }
+    
+    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
+        delegate?.didFailToConnectToDevice()
     }
 }

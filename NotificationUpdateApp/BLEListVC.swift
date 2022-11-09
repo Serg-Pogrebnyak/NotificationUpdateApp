@@ -56,6 +56,12 @@ extension BLEListVC: BLEDelegate {
         guard let detailsVC: DetailsVC = storyboard?.viewController() else { return }
         navigationController?.pushViewController(detailsVC, animated: true)
     }
+    
+    func didFailToConnectToDevice() {
+        showAlert(withTitle: "Connection error",
+                  message: "Didn't connect to device, please try again",
+                  actions: [.init(title: "OK", style: .default)])
+    }
 }
 
 extension BLEListVC: UITableViewDelegate {
