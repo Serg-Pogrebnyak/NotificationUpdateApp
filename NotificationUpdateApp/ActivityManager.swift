@@ -9,9 +9,16 @@ import Foundation
 import ActivityKit
 
 @available(iOS 16.1, *)
+protocol ActivityManagerDelegate: AnyObject {
+    func didReceiveNewToken(_ token: String)
+}
+
+@available(iOS 16.1, *)
 final class ActivityManager {
     
     static let shared = ActivityManager()
+    
+    weak var delegate: ActivityManagerDelegate?
     
     private init() {
         //no-op
@@ -30,6 +37,7 @@ final class ActivityManager {
         Task {
             for await activityPushToken in liveActivity.pushTokenUpdates {
                 activityToken = activityPushToken.hex
+                delegate?.didReceiveNewToken(activityPushToken.hex)
             }
         }
     }

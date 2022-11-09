@@ -18,6 +18,7 @@ final class DetailsVC: UIViewController {
         
         if #available(iOS 16.1, *) {
             setupActivityDataToDisplay()
+            ActivityManager.shared.delegate = self
         } else {
             liveActivityStackView.isHidden = true
         }
@@ -47,6 +48,14 @@ final class DetailsVC: UIViewController {
         } else {
             activityTokenLabel.text = "No activity token"
             liveActivityTerminalCommandLabel.text = "No activity token"
+        }
+    }
+}
+
+extension DetailsVC: ActivityManagerDelegate {
+    func didReceiveNewToken(_ token: String) {
+        if #available(iOS 16.1, *) {
+            setupActivityDataToDisplay()
         }
     }
 }
