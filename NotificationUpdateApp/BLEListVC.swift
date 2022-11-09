@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BLEListVC.swift
 //  NotificationUpdateApp
 //
 //  Created by Serhii on 12.05.2022.
@@ -9,7 +9,7 @@ import UIKit
 import ActivityKit
 import CoreBluetooth
 
-final class ViewController: UIViewController {
+final class BLEListVC: UIViewController {
 
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var devicesTableViewList: UITableView!
@@ -21,6 +21,7 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         if #available(iOS 16.1, *) {
             startLiveActivity()
         }
@@ -53,7 +54,7 @@ final class ViewController: UIViewController {
     }
 }
 
-extension ViewController: BLEDelegate {
+extension BLEListVC: BLEDelegate {
     func notifyThatFoundNewDeviceInScanningTime(device: CBPeripheral) {
         guard !(device.name?.isEmpty ?? true) else { return }
         peripheralSet.insert(device)
@@ -64,13 +65,13 @@ extension ViewController: BLEDelegate {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension BLEListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension BLEListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         peripheralArray.count
     }

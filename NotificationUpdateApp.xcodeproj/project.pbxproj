@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D020A40E282D33F2002D9725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020A40D282D33F2002D9725 /* AppDelegate.swift */; };
-		D020A412282D33F2002D9725 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020A411282D33F2002D9725 /* ViewController.swift */; };
+		D020A412282D33F2002D9725 /* BLEListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D020A411282D33F2002D9725 /* BLEListVC.swift */; };
 		D020A415282D33F2002D9725 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D020A413282D33F2002D9725 /* Main.storyboard */; };
 		D020A417282D33F3002D9725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D020A416282D33F3002D9725 /* Assets.xcassets */; };
 		D020A41A282D33F3002D9725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D020A418282D33F3002D9725 /* LaunchScreen.storyboard */; };
@@ -54,7 +54,7 @@
 /* Begin PBXFileReference section */
 		D020A40A282D33F2002D9725 /* NotificationUpdateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationUpdateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D020A40D282D33F2002D9725 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D020A411282D33F2002D9725 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D020A411282D33F2002D9725 /* BLEListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEListVC.swift; sourceTree = "<group>"; };
 		D020A414282D33F2002D9725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D020A416282D33F3002D9725 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D020A419282D33F3002D9725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 			children = (
 				D020A421282D343F002D9725 /* NotificationUpdateApp.entitlements */,
 				D020A40D282D33F2002D9725 /* AppDelegate.swift */,
-				D020A411282D33F2002D9725 /* ViewController.swift */,
+				D020A411282D33F2002D9725 /* BLEListVC.swift */,
 				D020A422282D4B4A002D9725 /* NotificationManager.swift */,
 				D0EE75BB291BC17F005D3094 /* BLE.swift */,
 				D020A424282D4D01002D9725 /* Extension */,
@@ -266,7 +266,7 @@
 			files = (
 				D020A423282D4B4A002D9725 /* NotificationManager.swift in Sources */,
 				D0EE75BC291BC17F005D3094 /* BLE.swift in Sources */,
-				D020A412282D33F2002D9725 /* ViewController.swift in Sources */,
+				D020A412282D33F2002D9725 /* BLEListVC.swift in Sources */,
 				D020A40E282D33F2002D9725 /* AppDelegate.swift in Sources */,
 				D020A426282D4D10002D9725 /* Data.swift in Sources */,
 				D0EE75BE291BC1A5005D3094 /* CBCentralManager.swift in Sources */,
