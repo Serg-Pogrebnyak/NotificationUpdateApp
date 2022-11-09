@@ -8,6 +8,9 @@
 import UIKit
 
 extension UIViewController {
+    
+    static var identifier: String { String(describing: self) }
+    
     func showBluetoothError() {
         showAlert(withTitle: "Bluetooth error",
                   message: "Bluetooth turn off or Bluetooth permission denied",
