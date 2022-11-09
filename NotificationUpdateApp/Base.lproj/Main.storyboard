@@ -12,7 +12,7 @@
         <!--ListVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="BLEListVC" customModule="NotificationUpdateApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BLEListVC" id="BYZ-38-t0r" customClass="BLEListVC" customModule="NotificationUpdateApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,34 +80,42 @@
             </objects>
             <point key="canvasLocation" x="162" y="775"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="kvU-2N-OOf">
+        <!--DetailsVC-->
+        <scene sceneID="H8b-zR-gKo">
             <objects>
-                <tableViewController id="w9Q-8E-D5K" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="9Di-ty-BPg">
+                <viewController storyboardIdentifier="DetailsVC" id="Lok-T9-b13" customClass="DetailsVC" customModule="NotificationUpdateApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4kB-Mu-UkB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="X03-MP-30N">
+                                <rect key="frame" x="20" y="438" width="374" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OD-8B-V0W">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="InP-6Y-rWR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YJY-Ou-E5A">
-                                <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YJY-Ou-E5A" id="Ngb-aq-Tr6">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="w9Q-8E-D5K" id="p9E-Hg-AIs"/>
-                            <outlet property="delegate" destination="w9Q-8E-D5K" id="DUv-A1-9ZS"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="vkj-Jy-jM4"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4IV-Yw-LC1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="InP-6Y-rWR" firstAttribute="trailing" secondItem="X03-MP-30N" secondAttribute="trailing" constant="20" id="2DY-Es-y9n"/>
+                            <constraint firstItem="X03-MP-30N" firstAttribute="leading" secondItem="InP-6Y-rWR" secondAttribute="leading" constant="20" id="bLb-8W-6ve"/>
+                            <constraint firstItem="X03-MP-30N" firstAttribute="centerY" secondItem="4kB-Mu-UkB" secondAttribute="centerY" id="kFW-Zh-qKL"/>
+                            <constraint firstItem="X03-MP-30N" firstAttribute="centerX" secondItem="4kB-Mu-UkB" secondAttribute="centerX" id="nFQ-n3-esB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityTokenLabel" destination="9OD-8B-V0W" id="orv-9h-Ujc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iR1-hI-r1V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="775"/>
+            <point key="canvasLocation" x="1064" y="775"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="H85-iS-6Wq">

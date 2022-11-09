@@ -41,13 +41,16 @@ extension BLEListVC: BLEDelegate {
     }
     
     func didConnectToDevice() {
-        
+        guard let detailsVC: DetailsVC = storyboard?.viewController() else { return }
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
 
 extension BLEListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard peripheralArray.indices.contains(indexPath.row) else { return }
+        ble.connectTo(device: peripheralArray[indexPath.row])
     }
 }
 
