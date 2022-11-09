@@ -18,6 +18,15 @@ final class BLEListVC: UIViewController {
     private var peripheralSet: Set<CBPeripheral> = .init() { didSet { devicesTableViewList.reloadData() } }
     private var peripheralArray: [CBPeripheral] { Array(peripheralSet).sorted { ($0.name ?? .init()) > ($1.name ?? .init()) } }
     
+    private lazy var emptyListLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.alpha = 0.6
+        label.textAlignment = .center
+        label.text = "The device list is empty. \n Tap the search button to start scanning Bluetooth devices"
+        return label
+    }()
+    
     private let ble = BLE()
     
     override func viewDidLoad() {
@@ -78,7 +87,8 @@ extension BLEListVC: UITableViewDelegate {
 
 extension BLEListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        peripheralArray.count
+        tableView.backgroundView = peripheralArray.isEmpty ? emptyListLabel : nil
+        return peripheralArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
