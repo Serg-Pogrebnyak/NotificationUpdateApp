@@ -51,7 +51,7 @@ Actual result: I received only push notifications that appeared on the screen th
 Expected result: when I send live activity updates or push notifications with collapse id I should receive updates via ANCS
 
 
-## Video of the bug descriptionn 📼
+## Video of the bug description 📼
 
 https://user-images.githubusercontent.com/33331545/201103898-dac70b31-671e-479b-ac09-1134383a8fef.mp4
 
