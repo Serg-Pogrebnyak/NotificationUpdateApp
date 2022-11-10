@@ -45,10 +45,17 @@ screen /dev/cu.usbserial-A10LTYXX 115200
 - Tap enter
 - Make sure that you received live activity updates or push notifications on your iOS device
 
+## Bug description 🐛
+Actual result: I received only push notifications that appeared on the screen the first time, the rest of the updates I didn't receive at all
+
+Expected result: when I send live activity updates or push notifications with collapse id I should receive updates via ANCS
+
+
+## Video of the bug descriptionn 📼
 
 https://user-images.githubusercontent.com/33331545/201103898-dac70b31-671e-479b-ac09-1134383a8fef.mp4
 
 
-## Troubleshooting 🐛
+## Troubleshooting 🔧
 - If the live activity didn't launch automatically -> check in the application settings does it allowed to show, or relaunch the application
 - If you didn't receive push notifications -> check do you launch an application in debug configuration, otherwise change in *.sh files ```APNS_HOST_NAME``` on release.
